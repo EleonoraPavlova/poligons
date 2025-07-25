@@ -9,6 +9,7 @@ const villageStore = useVillageStore()
 const loading = computed(() => !villageStore.isLoaded)
 const details = computed(() => villageStore.villageDetails)
 </script>
+
 <template>
   <div v-if="!loading" class="flex flex-col justify-between">
     <div>
