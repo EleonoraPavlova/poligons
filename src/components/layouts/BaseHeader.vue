@@ -10,7 +10,7 @@ const goToHome = () => {
 </script>
 
 <template>
-  <header class="w-full flex items-center justify-between p-4 bg-white shadow-md sticky">
+  <header class="w-full flex items-center justify-between p-4 bg-white shadow-md sticky top-0">
     <div class="flex items-center space-x-3 cursor-pointer" @click="goToHome">
       <img src="@/assets/logo.png" alt="Logo" class="h-10 w-10 object-contain" />
       <div>

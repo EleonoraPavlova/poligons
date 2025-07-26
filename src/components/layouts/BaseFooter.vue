@@ -3,7 +3,9 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-2">
         <img src="@/assets/logo.png" alt="Logo" class="h-6 w-6 object-contain" />
-        <span class="text-sm">&copy; 2025 MyProject. All rights reserved.</span>
+        <span class="text-sm"
+          >&copy; 2025 MyPoligons by Eleonora Pavlova. All rights reserved.</span
+        >
       </div>
 
       <nav class="flex flex-wrap gap-4 text-sm">
