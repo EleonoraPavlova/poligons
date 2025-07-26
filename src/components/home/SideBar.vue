@@ -17,24 +17,24 @@ const filteredVillages = computed(() => {
 })
 </script>
 <template>
-  <div class="grid gap-4 h-full grid-rows-[max-content_1fr] overflow-scroll">
+  <div class="grid gap-4 h-full min-h-0 grid-rows-[max-content_1fr]">
     <TextField
       v-model:model-value="searchquery"
       placeholder="Search villages..."
       :disabled="isLoadingVillages"
       name="search"
     />
-    <ul class="overflow-y-auto flex flex-col gap-3">
+    <ul class="overflow-y-auto h-full min-h-0 flex flex-col gap-3">
       <li
         v-for="village in filteredVillages"
         :key="village.osm_id"
         class="border-gray-300 border rounded p-2"
       >
         <router-link :to="{ name: ROUTES.VILLAGE.name, params: { villageId: village.osm_id } }">
-          <div class="font-bold">
+          <span class="font-bold">
             {{ village.name }}
-          </div>
-          <div>{{ village.address.country }}, {{ village.address.state }}</div>
+          </span>
+          <p>{{ village.address.country }}, {{ village.address.state }}</p>
         </router-link>
       </li>
     </ul>

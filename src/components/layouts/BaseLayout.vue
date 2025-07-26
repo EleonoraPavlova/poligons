@@ -31,7 +31,7 @@ const isLoading = computed(() =>
   <div class="min-h-screen flex flex-col">
     <BaseHeader />
     <BaseLoader v-if="isLoading" />
-    <main class="p-6 mx-2 flex-grow overflow-y-auto">
+    <main class="p-6 mx-2 h-[calc(100vh-160px)] overflow-y-auto">
       <slot />
     </main>
     <BaseFooter />
