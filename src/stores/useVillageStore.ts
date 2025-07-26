@@ -17,6 +17,6 @@ export const useVillageStore = defineStore('village', () => {
   return {
     loadVillage,
     isLoaded,
-    villageDetails
+    villageDetails,
   }
 })

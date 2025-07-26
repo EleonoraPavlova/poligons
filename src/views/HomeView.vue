@@ -3,7 +3,8 @@ import HomeContent from '@/components/home/HomeContent.vue'
 </script>
 
 <template>
-  <main class="w-full h-full flex flex-col items-center justify-center">
+  <div class="flex-grow overflow-y-auto">
     <HomeContent />
-  </main>
+  </div>
 </template>
+<!--//class="w-full h-full flex flex-col items-center justify-center"-->

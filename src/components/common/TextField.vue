@@ -16,13 +16,12 @@ const valueChanged = (e: Event) => {
 </script>
 
 <template>
-  <div>
-    <input
-      :value="modelValue"
-      :placeholder="placeholder"
-      :disabled="disabled"
-      @change="valueChanged"
-      @input="valueChanged"
-    />
-  </div>
+  <input
+    class="border border-gray-200 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-300 w-full"
+    :value="modelValue"
+    :placeholder="placeholder"
+    :disabled="disabled"
+    @change="valueChanged"
+    @input="valueChanged"
+  />
 </template>
