@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import HomeSidebar from '../components/home/SideBar.vue'
-import VillageSidebar from '../components/village/SideBar.vue'
+import VillageSidebar from '../components/village/SideBarVillage.vue'
 import VillageView from '@/views/VillageView.vue'
 import { ROUTES } from '@/router/routers.ts'
 

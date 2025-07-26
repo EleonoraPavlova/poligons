@@ -69,21 +69,19 @@ if (highlightVillage) {
 }
 </script>
 <template>
-  <div class="w-full h-full">
-    <LMap
-      ref="mapRef"
-      :zoom="2"
-      :center="[47.41322, -1.219482]"
-      style="height: 400px; width: 800px"
-      :useGlobalLeaflet="false"
-    >
-      <LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <LPolygon
-        v-for="(polygon, index) in polygonsList"
-        :key="index"
-        :lat-lngs="polygon.latLngs"
-        :color="polygon.color"
-      />
-    </LMap>
-  </div>
+  <LMap
+    ref="mapRef"
+    :zoom="2"
+    :center="[47.41322, -1.219482]"
+    class="w-full h-full rounded"
+    :useGlobalLeaflet="false"
+  >
+    <LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    <LPolygon
+      v-for="(polygon, index) in polygonsList"
+      :key="index"
+      :lat-lngs="polygon.latLngs"
+      :color="polygon.color"
+    />
+  </LMap>
 </template>

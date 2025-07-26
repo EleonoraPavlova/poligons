@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { useVillagesStore } from '@/stores/useVillagesStore'
 import { computed, ref } from 'vue'
 
 import TextField from '../common/TextField.vue'
+import { useVillagesStore } from '@/stores/useVillagesStore.ts'
+import { ROUTES } from '@/router/routers.ts'
 
 const villagesStore = useVillagesStore()
 const isLoadingVillages = computed(() => !villagesStore.isLoaded)
@@ -16,16 +17,20 @@ const filteredVillages = computed(() => {
 })
 </script>
 <template>
-  <div v-if="isLoadingVillages">Loading...</div>
-  <div v-else class="grid gap-4 h-full grid-rows-[max-content_1fr] overflow-hidden">
+  <div class="grid gap-4 h-full grid-rows-[max-content_1fr] overflow-scroll">
     <TextField
       v-model:model-value="searchquery"
       placeholder="Search villages..."
       :disabled="isLoadingVillages"
+      name="search"
     />
-    <ul class="p-2 overflow-y-auto">
-      <li v-for="village in filteredVillages" :key="village.osm_id" class="mb-2 border p-2">
-        <router-link :to="{ name: 'village', params: { villageId: village.osm_id } }">
+    <ul class="overflow-y-auto flex flex-col gap-3">
+      <li
+        v-for="village in filteredVillages"
+        :key="village.osm_id"
+        class="border-gray-300 border rounded p-2"
+      >
+        <router-link :to="{ name: ROUTES.VILLAGE.name, params: { villageId: village.osm_id } }">
           <div class="font-bold">
             {{ village.name }}
           </div>

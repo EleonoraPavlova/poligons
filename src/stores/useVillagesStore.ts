@@ -15,14 +15,12 @@ export const useVillagesStore = defineStore('villages', () => {
 
     const village = await getVillagesByCoords(poligons)
     villages.value = village
-
     isLoaded.value = true
   }
-
-  loadVillages()
 
   return {
     villages,
     isLoaded,
+    loadVillages,
   }
 })
