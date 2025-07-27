@@ -1,5 +1,7 @@
 <template>
-  <footer class="w-full bg-gray-100 text-gray-600 py-6 px-4 mt-auto">
+  <footer
+    class="w-full bg-white/30 backdrop-blur-md text-gray-600 py-4 px-3 mt-auto shadow-md border-t border-white/10 rounded-t-xl"
+  >
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-2">
         <img src="@/assets/logo.png" alt="Logo" class="h-6 w-6 object-contain" />

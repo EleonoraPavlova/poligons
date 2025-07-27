@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css'
 
 <template>
   <BaseLayout>
-    <div class="grid grid-cols-[1fr_4fr] h-full w-full gap-8 min-h-0">
+    <div class="grid w-full h-full gap-8 min-h-0 grid-cols-1 sm:grid-cols-[1fr_4fr]">
       <RouterView name="sidebar" />
       <RouterView />
     </div>
