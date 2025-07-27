@@ -17,9 +17,8 @@ const filteredVillages = computed(() => {
 })
 </script>
 <template>
-  <div class="grid gap-4 h-full min-h-0 grid-rows-[max-content_1fr]">
+  <div class="grid gap-4 h-full grid-rows-[max-content_1fr] sm:min-h-0 min-h-[250px]">
     <TextField
-
       v-model:model-value="searchquery"
       placeholder="Search villages..."
       :disabled="isLoadingVillages"
