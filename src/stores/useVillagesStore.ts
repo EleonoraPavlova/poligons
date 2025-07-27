@@ -15,8 +15,9 @@ export const useVillagesStore = defineStore('villages', () => {
     if (isLoaded.value) return
     try {
       const poligons = await getList()
-      const village = await getVillagesByCoords(poligons)
-      villages.value = village
+      await getVillagesByCoords(poligons, (village) => {
+        villages.value.push(village)
+      })
       isLoaded.value = true
     } catch (error) {
       console.error('Error loading villages:', error)
