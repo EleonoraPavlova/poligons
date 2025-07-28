@@ -14,7 +14,7 @@ const getVillagesByCoords = async (
   poligons: Polygon[],
   onVillageLoaded?: (village: NominatimPlace) => void,
 ): Promise<NominatimPlace[]> => {
-  let villages: NominatimPlace[] = []
+  const villages: NominatimPlace[] = []
   const errors = []
   if (import.meta.env.MODE === 'production') {
     const limit = pLimit(1)
@@ -31,10 +31,9 @@ const getVillagesByCoords = async (
       ),
     )
   } else {
-    const villagesMock = (await import('@/api/mocks/villagesResponse').then(
+    return (await import('@/api/mocks/villagesResponse').then(
       (module) => module.default,
     )) as NominatimPlace[]
-    villages = villagesMock
   }
   return villages
 }

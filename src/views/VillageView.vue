@@ -2,7 +2,6 @@
 import { useRoute } from 'vue-router'
 import { useVillageStore } from '@/stores/useVillageStore'
 import VillageContent from '@/components/village/VillageContent.vue'
-import BaseLoader from '@/components/layouts/BaseLoader.vue'
 
 const route = useRoute()
 const villageStore = useVillageStore()
