@@ -2,7 +2,7 @@ import { BASE_URL } from '@/api/nominatimApi.ts'
 import { createStorageCache } from '@/utils/createStorageCache.ts'
 
 const cache = createStorageCache('nominatim', {
-  ttlMs: 60 * 60 * 1000, // 1 час
+  ttlMs: 60 * 60 * 1000, // 1 hour
 })
 
 const VERCEL_PROXY_BASE_URL = '/api/proxy'
