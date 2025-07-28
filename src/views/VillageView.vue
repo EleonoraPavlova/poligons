@@ -7,11 +7,8 @@ import BaseLoader from '@/components/layouts/BaseLoader.vue'
 const route = useRoute()
 const villageStore = useVillageStore()
 villageStore.loadVillage(route.params.villageId as string)
-
-const isLoading = !villageStore.isLoaded
 </script>
 
 <template>
-  <BaseLoader v-if="isLoading" />
   <VillageContent />
 </template>
