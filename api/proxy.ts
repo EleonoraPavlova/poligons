@@ -2,7 +2,11 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
-    const externalUrl = req.query.url as string
+    const encodedUrl = req.query.url as string
+    if (!encodedUrl) {
+      return res.status(400).json({ error: 'Missing URL' })
+    }
+    const externalUrl = decodeURIComponent(encodedUrl)
 
     if (!externalUrl || !externalUrl.startsWith('https://')) {
       return res.status(400).json({ error: 'Invalid or missing URL' })
@@ -11,10 +15,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const response = await fetch(externalUrl, {
       method: req.method,
       headers: {
-        'Content-Type': 'application/json',
         'User-Agent': 'my-test-task',
       },
-      body: req.method !== 'GET' && req.method !== 'HEAD' ? req.body : undefined,
     })
 
     if (!response.ok) {

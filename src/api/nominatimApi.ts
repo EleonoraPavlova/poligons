@@ -17,7 +17,7 @@ const getVillagesByCoords = async (
   let villages: NominatimPlace[] = []
   const errors = []
   if (import.meta.env.MODE === 'production') {
-    const limit = pLimit(2)
+    const limit = pLimit(1)
     await Promise.all(
       poligons.map((polygon) =>
         limit(async () => {
