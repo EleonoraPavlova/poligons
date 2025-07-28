@@ -12,6 +12,6 @@ const isLoading = !villageStore.isLoaded
 </script>
 
 <template>
-  <BaseLoader v-if="isLoading"/>
+  <BaseLoader v-if="isLoading" />
   <VillageContent />
 </template>
