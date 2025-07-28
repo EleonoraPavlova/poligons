@@ -15,10 +15,11 @@ export const useVillageStore = defineStore('village', () => {
     try {
       villageDetails.value = await getVillageDetails(villageId)
       isLoaded.value = true
-    } catch (error) {
+    } catch(error){
       console.error('Error loading village:', error)
       toast.showToast('Error loading village')
     }
+
   }
 
   return {
