@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="w-full bg-white/30 backdrop-blur-md text-gray-600 py-4 px-3 mt-auto shadow-md border-t border-white/10 rounded-t-xl"
+    class="w-full bg-white/30 backdrop-blur-md text-gray-600 py-4 px-3 mt-1 sm:mt-auto shadow-md border-t border-white/10 rounded-t-xl"
   >
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-2">
@@ -10,7 +10,7 @@
         >
       </div>
 
-      <nav class="flex flex-wrap gap-4 text-sm">
+      <nav class="hidden sm:flex flex-wrap gap-4 text-sm">
         <a href="#" class="hover:text-gray-800 transition">About</a>
         <a href="#" class="hover:text-gray-800 transition">Contacts</a>
         <a href="#" class="hover:text-gray-800 transition">Terms & Conditions</a>
