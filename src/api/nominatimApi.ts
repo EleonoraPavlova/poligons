@@ -24,9 +24,9 @@ const getVillagesByCoords = async (
           const village = await getVillageByCoords(getCenter(polygon.polygon))
           villages.push(village)
           onVillageLoaded?.(village)
-        }).catch ((e) => {
-            console.error('error loading village:', e)
-            errors.push({ polygon, error: e })
+        }).catch((e) => {
+          console.error('error loading village:', e)
+          errors.push({ polygon, error: e })
         }),
       ),
     )
@@ -40,14 +40,14 @@ const getVillagesByCoords = async (
 }
 
 const getVillageByCoords = async (coords: Coordinates): Promise<NominatimPlace> => {
-const path = `/reverse?lat=${coords.lat}&lon=${coords.lng}&format=json&zoom=10&addressdetails=1`
+  const path = `/reverse?lat=${coords.lat}&lon=${coords.lng}&format=json&zoom=10&addressdetails=1`
   return await fetchDataFromExternalApi(path)
 }
 
 const getVillageDetails = async (placeId: string): Promise<NominatimPlaceWithGeojson> => {
-const path = `/lookup?osm_ids=R${placeId}&polygon_geojson=1&format=json`
- const resp: NominatimPlaceWithGeojson[]  =  await fetchDataFromExternalApi(path)
-  return  resp[0]
+  const path = `/lookup?osm_ids=R${placeId}&polygon_geojson=1&format=json`
+  const resp: NominatimPlaceWithGeojson[] = await fetchDataFromExternalApi(path)
+  return resp[0]
 }
 
 export { getVillagesByCoords, getVillageDetails }
